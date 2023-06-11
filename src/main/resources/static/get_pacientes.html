@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacientes</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestión de Odontólogos
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/post_odontologos.html">Alta</a></li>
+                <li><a class="dropdown-item" href="/get_odontologos.html">Listar</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestión de Pacientes
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/post_pacientes.html">Alta</a></li>
+                <li><a class="dropdown-item" href="/get_pacientes.html">Listar</a></li>
+
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestión de Turnos
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/post_turnos.html">Alta</a></li>
+                <li><a class="dropdown-item" href="/get_turnos.html">Listar</a></li>
+
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+<div id="div_paciente_table">
+    <h2>Pacientes</h2>
+    <div class="row col-md-8 table-responsive">
+        <table id="pacienteTable" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cédula</th>
+                <th>Fecha de Ingreso</th>
+                <th>Email</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="pacienteTableBody">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-9" style="display: none;
+                                        background-color:#e6fffa; padding:10px; border-radius:3px"
+         id="div_paciente_updating">
+        <form id="update_paciente_form">
+            <div class="form-group">
+                <label >Id:</label>
+                <input type="text" class="form-control" id="paciente_id" readonly>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre"
+                       placeholder="Ingrese el Nombre"
+                       name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido"
+                       placeholder="Ingrese el Apellido"
+                       name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="cedula">Cedula:</label>
+                <input type="text" class="form-control" id="cedula"
+                       placeholder="Ingrese la cedula"
+                       name="cedula" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="fechaDeIngreso">Fecha de Ingreso:</label>
+                <input type="date" class="form-control" id="fechaDeIngreso"
+                       placeholder="Ingrese la fecha de registro"
+                       name="fechaDeIngreso" required>
+            </div>
+            <div class="form-group">
+                <label >Domicilio Id:</label>
+                <input type="text" class="form-control" id="domicilio_id" readonly>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="calle">Calle:</label>
+                <input type="text" class="form-control" id="calle"
+                       placeholder="Ingrese la calle"
+                       name="calle" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="numero">Numero:</label>
+                <input type="text" class="form-control" id="numero"
+                       placeholder="Ingrese la altura"
+                       name="numero" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="localidad">Localidad:</label>
+                <input type="text" class="form-control" id="localidad"
+                       placeholder="Ingrese la localidad"
+                       name="localidad" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="provincia">Provincia:</label>
+                <input type="text" class="form-control" id="provincia"
+                       placeholder="Ingrese la provincia"
+                       name="provincia" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="email">Correo Electronico:</label>
+                <input type="text" class="form-control" id="email"
+                       placeholder="Ingrese el Correo"
+                       name="email" required>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+        <div id="response" style="display:none; margin:10px">
+        </div>
+    </div>
+</div>
+<hr>
+</div>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="/js/get_pacientes.js"></script>
+<script type="text/javascript" src="/js/update_paciente.js"></script>
+<script type="text/javascript" src="/js/delete_paciente.js"></script>
+</body>
+</html>
