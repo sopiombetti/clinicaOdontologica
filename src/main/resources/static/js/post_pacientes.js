@@ -10,12 +10,12 @@ window.addEventListener('load', function () {
             apellido: document.querySelector('#apellido').value,
             cedula: document.querySelector('#cedula').value,
             fechaDeIngreso: document.querySelector('#fechaDeIngreso').value,
-            domicilio: {
+            /*domicilio: {
                 calle: document.querySelector('#calle').value,
                 numero: document.querySelector('#numero').value,
                 localidad: document.querySelector('#localidad').value,
                 provincia: document.querySelector('#provincia').value,
-            },
+            },*/
             email: document.querySelector('#email').value
         };
 
@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData)
-        };
+        }
 
         fetch(url, settings)
             .then(response => response.json())

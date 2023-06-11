@@ -25,28 +25,24 @@ window.addEventListener('load', function () {
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
-
-                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                     '<strong></strong> Odontologo agregado </div>'
-
-                 document.querySelector('#response').innerHTML = successAlert;
-                 document.querySelector('#response').style.display = "block";
+                 console.log(data);
+                 showResponse('success', 'Odontólogo agregado');
                  resetUploadForm();
-
             })
             .catch(error => {
-
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                     '<strong> Error, intente nuevamente</strong> </div>'
-
-                      document.querySelector('#response').innerHTML = errorAlert;
-                      document.querySelector('#response').style.display = "block";
-
-                     resetUploadForm();})
+                  showResponse('error', 'Error, intente nuevamente');
+                  resetUploadForm();
+            });
     });
 
+    function showResponse(type, message) {
+            const responseContainer = document.querySelector('#response');
+            responseContainer.innerHTML = `<div class="alert alert-${type} alert-dismissible">` +
+                `<button type="button" class="close" data-dismiss="alert">&times;</button>` +
+                `<strong>${type.charAt(0).toUpperCase() + type.slice(1)}</strong> ${message}` +
+                `</div>`;
+            responseContainer.style.display = 'block';
+        }
 
     function resetUploadForm(){
         document.querySelector('#matricula').value = "";
@@ -55,12 +51,4 @@ window.addEventListener('load', function () {
 
     }
 
-    (function(){
-        let pathname = window.location.pathname;
-        if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/peliculaList.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
-        }
-    })();
 });
