@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
           let tr_id = 'tr_' + paciente.id;
           pacienteRow.id = tr_id;
 
+
           let deleteButton = '<button' +
             ' id=' + '\"' + 'btn_delete_' + paciente.id + '\"' +
             ' type="button" onclick="deleteBy('+paciente.id+')" class="btn btn-danger btn_delete">' +

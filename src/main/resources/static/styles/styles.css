@@ -8,7 +8,7 @@ body{
 
     height: 100px;
     background-color: rgb(7, 59, 78);
-
+    width: 100vw;
 }
 
 .navbar-nav{
@@ -52,7 +52,13 @@ body{
     width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /*z-index: 1;*/
-    margin-top: 14px;
+    margin-top: 15px;
+    top: 90%;
+    left: 0;
+    transition: display 0.3s ease-in-out;
+    margin-left: 0;
+    padding-left: 0;
+    border-radius: 4px;
 }
 
 .dropdown-menu li {
@@ -68,6 +74,8 @@ body{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s ease-in-out;
+
 }
 
 .dropdown-item:hover {
@@ -85,6 +93,7 @@ main{
     justify-content: space-around;
     height: 600px;
     background-color: rgb(196, 233, 246);
+    width: 100vw;
 }
 
 h1{
@@ -159,6 +168,7 @@ th, td {
     padding-bottom: 20px;
     padding-left: 70px;
     padding-right: 70px;
+    border-bottom: 3px solid #000000;
 }
 
 tr {
@@ -289,4 +299,78 @@ tr {
 #turnoTable th{
     padding-left: 80px;
     padding-right: 80px;
+}
+
+/* Botón borrar/modificar */
+
+.btn_delete{
+background-color: red;
+border-radius: 3px;
+}
+
+.btn_delete:hover{
+background-color: rgba(255, 0, 0, 0.536);
+}
+
+.btn_id{
+background-color: blue;
+border-radius: 3px;
+}
+
+.btn_id:hover{
+background-color: rgba(0, 0, 255, 0.563);
+}
+
+
+/* Update Form */
+
+#update_paciente_form{
+    display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 650px;
+        width: 300px;
+        margin-bottom: 20px;
+}
+
+#div_paciente_updating{
+    background-color:#63b6e0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding:10px;
+    border-radius:10px;
+    height: 700px;
+}
+
+#div_odontologo_updating{
+    background-color:#63b6e0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding:10px;
+    border-radius:10px;
+    height: 300px;
+}
+
+#update_odontologo_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+}
+
+#update_odontologo_form .btn{
+    width: 120px;
+    height: 50px;
+    background-color: rgb(26, 26, 96);
+    color: white;
+    border-radius: 10px;
+    font-size: large;
 }

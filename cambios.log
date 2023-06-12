@@ -6,3 +6,10 @@
 [2023-06-10 12:03:26] [ INFO ] [PacienteService:26] Registrando paciente nuevo
 [2023-06-11 14:12:50] [ INFO ] [PacienteService:26] Registrando paciente nuevo
 [2023-06-11 14:29:02] [ INFO ] [PacienteService:26] Registrando paciente nuevo
+[2023-06-12 16:26:05] [ INFO ] [PacienteService:26] Registrando paciente nuevo
+[2023-06-12 16:26:20] [ INFO ] [PacienteService:30] Buscando paciente por id
+[2023-06-12 16:26:54] [ INFO ] [PacienteService:30] Buscando paciente por id
+[2023-06-12 16:49:19] [ INFO ] [PacienteService:26] Registrando paciente nuevo
+[2023-06-12 16:51:00] [ INFO ] [PacienteService:30] Buscando paciente por id
+[2023-06-12 16:56:05] [ INFO ] [PacienteService:26] Registrando paciente nuevo
+[2023-06-12 16:57:40] [ INFO ] [PacienteService:26] Registrando paciente nuevo
