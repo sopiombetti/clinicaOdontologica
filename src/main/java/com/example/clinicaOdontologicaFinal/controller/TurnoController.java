@@ -30,7 +30,7 @@ public class TurnoController {
     @PostMapping
     public ResponseEntity<String> guardarTurno(@RequestBody Turno turno) throws BadRequestException {
         turnoService.guardarTurno(turno);
-        return ResponseEntity.ok("Se guardó el turno correctamente");
+        return ResponseEntity.ok("se guardó el turno correctamente");
     }
     @GetMapping("/{id}")
     public ResponseEntity<Turno> buscarTurno(@PathVariable Long id){
@@ -47,10 +47,10 @@ public class TurnoController {
         Optional<Turno> turnoBuscado = turnoService.buscarTurno(id);
         if(turnoBuscado.isPresent()){
             turnoService.eliminarTurno(id);
-            return ResponseEntity.ok("Se elimino el turno con id: " + id);
+            return ResponseEntity.ok("se elimino el turno con id: " + id);
         }
         else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El turno con id: " + id + " no existe");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("el turno con id: " + id + " no existe");
         }
     }
     @GetMapping
@@ -63,10 +63,10 @@ public class TurnoController {
         Optional<Turno> turnoBuscado= turnoService.buscarTurno(turno.getId());
         if(turnoBuscado.isPresent()) {
             turnoService.actualizarTurno(turno);
-            return ResponseEntity.ok("Turno actualizado");
+            return ResponseEntity.ok("turno actualizado");
         }
         else{
-            return  ResponseEntity.badRequest().body("No se pudo actualizar el turno con id:  "+ turno.getId());
+            return  ResponseEntity.badRequest().body("no se pudo actualizar el turno con id:  "+ turno.getId());
         }
     }
 }

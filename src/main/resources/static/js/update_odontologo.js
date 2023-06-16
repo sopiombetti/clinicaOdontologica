@@ -26,7 +26,6 @@ window.addEventListener('load', function () {
     })
  })
 
-
     function findBy(id) {
           const url = '/odontologos'+"/"+id;
           const settings = {

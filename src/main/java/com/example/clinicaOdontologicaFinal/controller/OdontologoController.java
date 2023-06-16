@@ -44,10 +44,10 @@ public class OdontologoController {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologo(id);
         if(odontologoBuscado.isPresent()){
             odontologoService.eliminarOdontologo(id);
-            return ResponseEntity.ok("Se elimino el odontologo con id: " + id);
+            return ResponseEntity.ok("se elimino el odontologo con id: " + id);
         }
         else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El odontologo con id: " + id + " no existe");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("el odontologo con id: " + id + " no existe");
         }
     }
     @PutMapping
@@ -56,7 +56,7 @@ public class OdontologoController {
         Optional<Odontologo> odontologoBuscado= odontologoService.buscarOdontologo(odontologo.getId());
         if(odontologoBuscado.isPresent()) {
             odontologoService.actualizarOdontologo(odontologo);
-            return ResponseEntity.ok("Odontologo actualizado" + " -" + odontologo.getNombre());
+            return ResponseEntity.ok("odontologo actualizado" + " -" + odontologo.getNombre());
         }
         else{
             return  ResponseEntity.badRequest().body("no se pudo actualizar el odontologo "+odontologo.getId()+" -"+odontologo.getNombre());

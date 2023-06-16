@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
           let pacienteRow = table.insertRow();
           let tr_id = 'tr_' + paciente.id;
           pacienteRow.id = tr_id;
-
+          console.log(paciente.id)
 
           let deleteButton = '<button' +
             ' id=' + '\"' + 'btn_delete_' + paciente.id + '\"' +
@@ -28,7 +28,8 @@ window.addEventListener('load', function () {
             paciente.id +
             '</button>';
 
-          pacienteRow.innerHTML = '<td>' + paciente.id + '</td>' +
+          pacienteRow.innerHTML =
+            '<td>' + paciente.id + '</td>' +
             '<td class=\"td_nombre\">' + paciente.nombre.toUpperCase() + '</td>' +
             '<td class=\"td_apellido\">' + paciente.apellido.toUpperCase() + '</td>' +
             '<td class=\"td_cedula\">' + paciente.cedula.toUpperCase() + '</td>' +

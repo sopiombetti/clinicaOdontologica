@@ -53,10 +53,10 @@ public class PacienteController {
         Optional<Paciente> pacienteBuscado= pacienteService.buscarPaciente(paciente.getId());
         if(pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
-            return ResponseEntity.ok("Paciente actualizado: " + paciente.getNombre());
+            return ResponseEntity.ok("paciente actualizado: " + paciente.getNombre());
         }
         else{
-            return  ResponseEntity.badRequest().body("No se pudo actualizar el paciente con id:  "+paciente.getId());
+            return  ResponseEntity.badRequest().body("no se pudo actualizar el paciente con id:  "+paciente.getId());
         }
     }
     @GetMapping
@@ -66,6 +66,6 @@ public class PacienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarPaciente(@PathVariable Long id) throws ResourceNotFoundException {
         pacienteService.eliminarPaciente(id);
-        return ResponseEntity.ok("Se eliminó el paciente con id: "+ id);
+        return ResponseEntity.ok("se eliminó el paciente con id: "+ id);
     }
 }
